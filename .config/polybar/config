@@ -1,0 +1,263 @@
+;=====================================================
+;
+;   sleep nightrogen
+;   sleep tightrogen
+;
+;   git outrogen: https://github.com/dracaether/dots
+;
+;=====================================================
+
+
+[colors]
+background = #23272E
+foreground = #AEB8C2
+
+color1 = #76818E
+color2 = #8D99A6
+color3 = #929599
+red    = #FF0086
+yellow = #ABA800
+green  = #00C918
+blue   = #3777E6
+white  = #202020
+
+[bar/dracaether]
+monitor = LVDS1
+monitor-fallback = eDP-1
+override-redirect = false
+bottom = false
+
+width = 100%
+height = 20
+font-0 = "hack:pixelsize=9;2"
+font-1 = "fontawesome:pixelsize=9;2"
+fixed-center = true
+
+module-background = ${colors.background}
+background = #23272E
+foreground = ${colors.foreground}
+
+module-margin = 2
+padding       = 2
+line-size     = 2
+
+modules-left   = bspwm
+modules-center = window dokuro
+modules-right  = wifi volume battery date powermenu
+
+dim-value = 1.0
+
+tray-position = right
+tray-detatched = false
+tray-transparent = false
+
+wm-restack = bspwm
+
+
+[global/wm]
+margin-bottom = 0
+margin-top = 0
+
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+throttle-input-for = 30
+screenchange-reload = true
+
+
+[module/bspwm]
+type = internal/bspwm
+
+pin-workspaces = false
+inline-mode = false
+enable-click = true
+enable-scroll = false
+
+;ws-icon-[0-9]+ = label;icon
+ws-icon-0 = cli;
+ws-icon-1 = code;
+ws-icon-2 = browse;
+ws-icon-3 = media;
+ws-icon-4 = mail;
+ws-icon-5 = cli2;
+ws-icon-6 = edit;
+ws-icon-7 = steam;
+ws-icon-8 = browsebig;
+ws-icon-9 = code2;
+ws-icon-default = 
+
+format = <label-state>
+format-font = 3
+
+label-monitor = %name%
+label-monitor-font = 3
+
+label-focused = %icon%
+label-focused-background = ${colors.color2}
+label-focused-overline = ${colors.white}
+label-focused-underline = ${colors.blue}
+label-focused-padding = 3
+
+label-occupied = %icon%
+label-occupied-background = ${colors.background}
+label-occupied-padding = 1
+
+label-urgent = %icon%
+label-urgent-background = ${colors.red}
+label-urgent-padding = 1
+
+label-empty = %icon%
+label-empty-background = ${colors.background}
+label-empty-foreground = ${colors.color1}
+label-empty-padding = 1
+
+
+[module/window]
+type = internal/xwindow
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+format-padding = 1
+
+[module/dokuro]
+type = custom/text
+content = josh@josh-pc
+content-background = ${colors.background}
+content-foreground = ${colors.blue}
+content-padding = 1
+
+
+[module/wifi]
+type = internal/network
+interface = wlp2s0
+interval = 3.0
+%upspeed:min:max%
+
+format-connected = <label-connected>
+format-connected-background = ${colors.background}
+format-connected-font = 3
+format-connected-padding = 1
+
+label-connected =  %essid:0:15:...%
+
+[module/volume]
+type = internal/volume
+;speaker-mixer = Speaker
+;headphone-mixer = Headphone
+;headphone-id = 28
+
+mapping = true
+
+format-volume = <ramp-volume><label-volume>
+format-volume-background = ${colors.background}
+format-volume-foreground = ${root.foreground}
+format-volume-padding = 1
+
+label-volume = %percentage%%
+
+format-muted-background = ${colors.background}
+format-muted-foreground = ${colors.color1}
+format-muted-padding = 1
+
+label-muted = 
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+
+ramp-headphones-0 = 
+;ramp-headphones-1 = 
+
+
+[module/battery]
+type = internal/battery
+full-at = 99
+
+battery = BAT0
+adapter = AC0
+
+format-full = <label-full>
+format-full-background = ${colors.background}
+format-full-foreground = ${colors.color2}
+format-full-padding = 1
+
+label-full = 
+
+format-charging = <label-charging>
+format-charging-background = ${colors.background}
+format-charging-foreground = ${colors.yellow}
+format-charging-padding = 1
+
+label-charging = %percentage%%
+
+format-discharging = <label-discharging>
+format-discharging-background = ${colors.background}
+format-discharging-foreground = ${colors.red}
+format-discharging-padding = 1
+
+label-discharging = -%percentage%%
+
+ramp-capacity-0 = %{F#da4939}
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = %{F#5a647e}
+ramp-capacity-foreground = ${colors.green}
+
+[module/date]
+type = internal/date
+
+format-background = ${colors.background}
+format-padding = 1
+
+label = %{F#5a647e}%{F-} %date% %{F#5a647e}%{F-} %time%
+
+date = %Y-%m-%d
+time = %H:%M
+interval = 5
+
+[module/powermenu]
+type = custom/menu
+
+format-background = ${colors.background}
+format-padding = 1
+
+label-open = 
+label-close = 
+label-separator = /
+
+menu-0-0 = 
+menu-0-0-foreground = ${colors.yellow}
+menu-0-0-exec = menu-open-1
+
+menu-0-1 = 
+menu-0-1-foreground = ${colors.yellow}
+menu-0-1-exec = menu-open-2
+
+menu-0-2 = 
+menu-0-2-foreground = ${colors.yellow}
+menu-0-2-exec = menu-open-3
+
+menu-1-0 = 
+menu-1-0-foreground = ${colors.green}
+menu-1-0-exec = bspc quit
+
+menu-1-1 = 
+menu-1-1-foreground = ${colors.red}
+menu-1-1-exec = menu-open-0
+
+menu-2-0 = 
+menu-2-0-foreground = ${colors.green}
+menu-2-0-exec = shutdown -r now
+
+menu-2-1 = 
+menu-2-1-foreground = ${colors.red}
+menu-2-1-exec = menu-open-0
+
+menu-3-0 = 
+menu-3-0-foreground = ${colors.green}
+menu-3-0-exec = shutdown -h now
+
+menu-3-1 = 
+menu-3-1-foreground = ${colors.red}
+menu-3-1-exec = menu-open-0
+
+; vim:ft=dosini
