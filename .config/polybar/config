@@ -43,7 +43,7 @@ line-size     = 2
 
 modules-left   = bspwm
 modules-center = window dokuro
-modules-right  = wifi volume battery date powermenu
+modules-right  = cpu wifi volume battery date powermenu
 
 dim-value = 1.0
 
@@ -67,6 +67,29 @@ screenchange-reload = true
 
 [module/bspwm]
 type = internal/bspwm
+
+label-focused = %name%
+label-focused-foreground = #ffffff
+label-focused-background = #AA000000
+label-focused-underline = #dfdfdf
+label-focused-padding = 1
+
+label-occupied = %name%
+label-occupied-underline = #555555
+label-occupied-padding = 1
+
+label-urgent = %name%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-underline = #9b0a20
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = #55
+label-empty-padding = 1
+
+format-spacing = 10
+
 
 pin-workspaces = false
 inline-mode = false
@@ -92,25 +115,11 @@ format-font = 3
 label-monitor = %name%
 label-monitor-font = 3
 
-label-focused = %icon%
-label-focused-background = ${colors.color2}
 label-focused-overline = ${colors.white}
-label-focused-underline = ${colors.blue}
-label-focused-padding = 3
 
-label-occupied = %icon%
 label-occupied-background = ${colors.background}
-label-occupied-padding = 1
 
-label-urgent = %icon%
-label-urgent-background = ${colors.red}
-label-urgent-padding = 1
-
-label-empty = %icon%
 label-empty-background = ${colors.background}
-label-empty-foreground = ${colors.color1}
-label-empty-padding = 1
-
 
 [module/window]
 type = internal/xwindow
@@ -137,7 +146,15 @@ format-connected-background = ${colors.background}
 format-connected-font = 3
 format-connected-padding = 1
 
-label-connected =  %essid:0:15:...%
+label-connected = %essid:0:15:%
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = #dfdfdf
+#format-underline = #FFFFFF
+label = %percentage%%
 
 [module/volume]
 type = internal/volume
@@ -211,7 +228,7 @@ format-padding = 1
 label = %{F#5a647e}%{F-} %date% %{F#5a647e}%{F-} %time%
 
 date = %Y-%m-%d
-time = %H:%M
+time = %I:%M
 interval = 5
 
 [module/powermenu]
