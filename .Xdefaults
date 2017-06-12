@@ -26,3 +26,9 @@ URxvt*color13:   #fb4cb3
 URxvt*color14:   #8be9fd
 URxvt*color15:   #ededec
 URxvt.font: 9x15
+URxvt.urlLauncher:      opera
+URxvt.iso14755:         False
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt*transparent: true
+URxvt*shading: 30
