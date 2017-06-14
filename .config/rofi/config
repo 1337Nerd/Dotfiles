@@ -1,0 +1,17 @@
+[~] rofi -dump-xresources                                                                                          
+The script command 'window' has 1 options, but needs 2: <name>:<script>.
+Invalid script switcher: window
+! Enabled modi
+rofi.modi:                           window,run,ssh
+! Window opacity
+rofi.opacity:                        100
+! Window width
+rofi.width:                          50
+! Number of lines
+rofi.lines:                          15
+! Number of columns
+rofi.columns:                        1
+! Font to use
+rofi.font:                           mono 12
+! Color scheme for normal row
+rofi.color-normal:                   #23272E, #AEB8C2, #23272E, #586e75,#eee8d5
