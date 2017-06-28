@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-	urxvt
+	gnome-terminal
 
 # program launcher
 super + d
-	rofi -show run
+	rofi -show run -disable-history
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -146,3 +146,7 @@ XF86MonBrightnessUp
 # Lowers Brightness
 XF86MonBrightnessDown
 	xbacklight -dec 5
+
+# Start Forge
+super + shift + f
+	/home/josh/forge.sh
