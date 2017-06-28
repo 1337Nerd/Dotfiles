@@ -131,7 +131,7 @@ format-padding = 1
 type = custom/text
 content = josh@josh-pc
 content-background = ${colors.background}
-content-foreground = ${colors.blue}
+content-foreground = "#FC0089"
 content-padding = 1
 
 
