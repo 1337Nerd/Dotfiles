@@ -11,15 +11,16 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config click_to_focus       true
+bspc config focused_border_color "#af005f"
+bspc config urgent_border_color "#72003e"
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+bspc rule -a mousepad state=floating
 
 sxhkd &
 compton --config ~/.config/compton.conf -b &
-feh --bg-fill ~/Downloads/Glorybringer*.jpg &
+feh --bg-fill ~/Downloads/_fugmdF7MPmD2YpXxewtoSuTaGYliUlaVg-eT_C2GRA.png &
 redshift -l 39.866397:-83.074054 &
 polybar dracaether &
