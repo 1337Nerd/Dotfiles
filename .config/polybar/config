@@ -9,8 +9,8 @@
 
 
 [colors]
-background = #23272E
-foreground = #AEB8C2
+background = #5A6D98
+foreground = #FCFDFD
 
 color1 = #76818E
 color2 = #8D99A6
@@ -34,7 +34,7 @@ font-1 = "fontawesome:pixelsize=9;2"
 fixed-center = true
 
 module-background = ${colors.background}
-background = #23272E
+background = #5A6D98
 foreground = ${colors.foreground}
 
 module-margin = 2
@@ -131,7 +131,7 @@ format-padding = 1
 type = custom/text
 content = josh@josh-pc
 content-background = ${colors.background}
-content-foreground = "#FC0089"
+content-foreground = "#FCFDFD"
 content-padding = 1
 
 
@@ -193,21 +193,21 @@ adapter = AC0
 
 format-full = <label-full>
 format-full-background = ${colors.background}
-format-full-foreground = ${colors.color2}
+format-full-foreground = "#FCFDFD"
 format-full-padding = 1
 
 label-full = 
 
 format-charging = <label-charging>
 format-charging-background = ${colors.background}
-format-charging-foreground = ${colors.yellow}
+format-charging-foreground = "#FCFDFD"
 format-charging-padding = 1
 
 label-charging = %percentage%%
 
 format-discharging = <label-discharging>
 format-discharging-background = ${colors.background}
-format-discharging-foreground = ${colors.red}
+format-discharging-foreground = "#FCFDFD"
 format-discharging-padding = 1
 
 label-discharging = -%percentage%%
