@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	gnome-terminal
+	gnome-terminal --hide-menubar
 
 # program launcher
 super + d
