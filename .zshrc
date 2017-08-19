@@ -124,3 +124,4 @@ source $ZSH/oh-my-zsh.sh
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs time battery)
 source /home/josh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+wal -t -r
