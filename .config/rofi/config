@@ -3,9 +3,9 @@
 ! ------------------------------------------------------------------------------
 
 !                 'background', 'border',  'separator'
-rofi.color-window: #EF003366, 	 #EF003366, #EF003366
+rofi.color-window: #EF2F313B, 	 #EF2F313B, #EF2F313B
 
 ! State:           'bg',          'fg',     'bgalt',	  'hlbg',   'hlfg'
-rofi.color-normal: #003366,       #4E6A92,  #003366,      #003366,  #FCFDFD
-rofi.color-active: #003366, 	  #268bd2,  #003366, 	  #268bd2,  #fdf6e3
+rofi.color-normal: #2F313B,       #D3C4AA,  #2F313B,      #2F313B,  #FCFDFD
+rofi.color-active: #2F313B, 	  #268bd2,  #2F313B, 	  #2F313B,  #fdf6e3
 rofi.color-urgent: #fdf6e3, 	  #dc322f,  #eee8d5, 	  #dc322f,  #fdf6e3
