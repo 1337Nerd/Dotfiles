@@ -11,22 +11,22 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config click_to_focus       true
-#bspc config focused_border_color "#6DCFE9"
+#bspc config focused_border_color "#B96982"
 bspc config urgent_border_color "#72003e"
 
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-bspc rule -a /home/josh/forge.sh desktop='^2'
 bspc rule -a mousepad state=floating
 
+sxhkd &
+compton --config ~/.config/compton.conf -b &
+redshift -l 39.866397:-83.074054 &
+wal -R
+polybar dracaether &
+
+source "$HOME/.cache/wal/colors.sh"
 bspc config normal_border_color "$color1"
 bspc config active_border_color "$color2"
 bspc config focused_border_color "$color15"
 bspc config presel_border_color "$color1"
-
-sxhkd &
-compton --config ~/.config/compton.conf -b &
-wal -R &
-redshift -l 39.866397:-83.074054 &
-polybar dracaether &
