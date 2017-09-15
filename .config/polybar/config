@@ -129,7 +129,7 @@ format-padding = 1
 
 [module/dokuro]
 type = custom/text
-content = josh@Oblivion
+content = josh@GLaDOS
 content-background = ${colors.background}
 content-foreground = ${colors.foreground}
 content-padding = 1
