@@ -1,5 +1,6 @@
 # Dotfiles
 First install pacaur. Do this by running the following commands AS NORMAL USER:
+
   sudo pacman -S expac yajl --noconfirm
   mkdir ~/tmp
   cd ~/tmp/
@@ -10,4 +11,5 @@ First install pacaur. Do this by running the following commands AS NORMAL USER:
   makepkg -i PKGBUILD --noconfirm
   cd
   rm -r ~/tmp
+
 Then, install packages from pkglist.txt, using 'pacaur -S - < pkglist.txt'
