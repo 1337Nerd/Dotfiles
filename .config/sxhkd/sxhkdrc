@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-	gnome-terminal --hide-menubar
+	dbus-launch gnome-terminal --hide-menubar
 
 # program launcher
 super + d
-	rofi -show run -disable-history
+	rofi -show run -disable-history -separator-style none -hide-scrollbar
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -126,27 +126,32 @@ super + {Left,Down,Up,Right}
 
 # Raises volume
 XF86AudioRaiseVolume
-	amixer -D pulse sset Master 3%+
+	amixer sset Master 3%+
 
 # Lowers volume
 XF86AudioLowerVolume
-	amixer -D pulse sset Master 3%-
+	amixer sset Master 3%-
 
 # Mute and unmute
 XF86AudioMute
 	amixer set Master toggle
+
 # Locks screen
 super + shift + e
 	lock
 
 # Raises brightness
 XF86MonBrightnessUp
-	xbacklight -inc 5
+	light -A 5
 
 # Lowers Brightness
 XF86MonBrightnessDown
-	xbacklight -dec 5
+	light -U 5
 
 # Start Forge
 super + shift + f
 	/home/josh/forge.sh
+
+# Start Sling
+super + shift + s
+	cd /home/josh/sling-lin64; ./sling; cd 
