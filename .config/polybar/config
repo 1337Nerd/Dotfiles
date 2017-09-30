@@ -22,7 +22,7 @@ blue   = #3777E6
 white  = #202020
 
 [bar/dracaether]
-monitor = eDP1
+monitor = LVDS-1
 monitor-fallback = eDP-1
 override-redirect = false
 bottom = false
@@ -43,7 +43,7 @@ line-size     = 2
 
 modules-left   = bspwm
 modules-center = window dokuro
-modules-right  = cpu wifi volume battery date powermenu
+modules-right  = weather wifi volume battery date powermenu
 
 dim-value = 1.0
 
@@ -129,7 +129,7 @@ format-padding = 1
 
 [module/dokuro]
 type = custom/text
-content = josh@GLaDOS
+content = josh@WheatDOS
 content-background = ${colors.background}
 content-foreground = ${colors.foreground}
 content-padding = 1
@@ -137,7 +137,7 @@ content-padding = 1
 
 [module/wifi]
 type = internal/network
-interface = wlp1s0
+interface = wlp2s0
 interval = 3.0
 %upspeed:min:max%
 
@@ -147,6 +147,13 @@ format-connected-font = 3
 format-connected-padding = 1
 
 label-connected = %essid:0:15:%
+
+[module/weather]
+type = custom/script
+exec = /home/josh/.config/polybar/weather.py
+interval = 3.0
+label = "  %output:0:22:...% "
+format-foreground = ${colors.foreground}
 
 [module/cpu]
 type = internal/cpu
@@ -227,7 +234,7 @@ format-padding = 1
 
 label = %{F#5a647e}%{F-} %date% %{F#5a647e}%{F-} %time%
 
-date = %Y-%m-%d
+date = %m/%d
 time = %I:%M
 interval = 5
 
