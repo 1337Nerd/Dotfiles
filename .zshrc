@@ -2,9 +2,9 @@
 export ZSH=/home/josh/.oh-my-zsh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export LC_ALL=en_US.UTF-8
-export TERMINAL=urxvt
+export TERMINAL=gnome-terminal
 export PAGER=less
-export VISUAL=emacs
+export VISUAL=nano
 export TERM="xterm-256color"
 export EDITOR='nano'
 
@@ -33,6 +33,30 @@ alias pacmanGhost="~/.pacman.sh"
 alias x="ranger"
 alias c="cmus"
 alias h="htop"
+
+extract () {
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xvjf $1    ;;
+      *.tar.gz)    tar xvzf $1    ;;
+      *.tar.xz)    tar xvJf $1    ;;
+      *.bz2)       bunzip2 $1     ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1      ;;
+      *.tar)       tar xvf $1     ;;
+      *.tbz2)      tar xvjf $1    ;;
+      *.tgz)       tar xvzf $1    ;;
+      *.zip)       unzip $1       ;;
+      *.Z)         uncompress $1  ;;
+      *.7z)        7z x $1        ;;
+      *.xz)        unxz $1        ;;
+      *.exe)       cabextract $1  ;;
+      *)           echo "\`$1': unrecognized file compression" ;;
+    esac
+  else
+    echo "\`$1' is not a valid file"
+  fi
+}
 
 neofetch
 
@@ -73,7 +97,7 @@ POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 
 # OS segment
 POWERLEVEL9K_OS_ICON_BACKGROUND='black'
-POWERLEVEL9K_LINUX_ICON='%F{cyan}\uf300 %F{cyan}antergos%f'
+POWERLEVEL9K_LINUX_ICON='%F{cyan}\uf300 %F{cyan}arch%f'
 
 # VCS icons
 POWERLEVEL9K_VCS_GIT_ICON=$'\uf1d3'
