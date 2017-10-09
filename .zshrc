@@ -13,7 +13,7 @@ source /home/josh/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-h
 autoload -Uz compinit
 
 # Colored man pages using less as pager
-man() {
+function man() {
     env \
 	LESS_TERMCAP_mb=$(printf "\e[1;31m") \
 	LESS_TERMCAP_md=$(printf "\e[1;31m") \
@@ -26,7 +26,7 @@ man() {
 }
 
 # Aliases for a few useful commands
-alias mirrorUpdate="reflector --latest 250 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
+#alias mirrorUpdate="reflector --latest 250 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
 alias screenfetch="screenfetch -w -c 31,3"
 alias yaourt="yaourt --pager --color"
 alias pacmanGhost="~/.pacman.sh"
