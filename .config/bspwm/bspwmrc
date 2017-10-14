@@ -2,7 +2,7 @@
 
 sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 bspc config border_width         2
 bspc config window_gap          12
@@ -22,7 +22,7 @@ sxhkd &
 xsetroot -cursor_name left_ptr &
 compton --config ~/.config/compton.conf -b &
 redshift -l 39.866397:-83.074054 &
-wal -i /home/josh/Downloads/$(( RANDOM % (8 - 1 + 1 ) + 1 )).png
+wal -R
 polybar dracaether &
 
 source "$HOME/.cache/wal/colors.sh"
