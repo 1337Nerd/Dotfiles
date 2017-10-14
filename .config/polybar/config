@@ -27,12 +27,14 @@ monitor-fallback = eDP-1
 override-redirect = false
 bottom = false
 
-width = 100%
-height = 20
+width = 95%
+height = 30
 font-0 = "hack:pixelsize=9;2"
 font-1 = "fontawesome:pixelsize=9;2"
 fixed-center = true
 
+offset-x = 34
+offset-y = 12
 module-background = ${colors.background}
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -42,7 +44,7 @@ padding       = 2
 line-size     = 2
 
 modules-left   = bspwm
-modules-center = window dokuro
+modules-center = dokuro
 modules-right  = weather wifi volume battery date powermenu
 
 dim-value = 1.0
