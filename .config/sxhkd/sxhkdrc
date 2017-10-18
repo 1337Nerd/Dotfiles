@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	dbus-launch gnome-terminal --hide-menubar
+	dbus-launch mate-terminal --hide-menubar
 
 # program launcher
 super + d
@@ -112,6 +112,9 @@ super + ctrl + shift + space
 super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
+super + {equal,minus} 
+	bspc config window_gap $(( $(bspc config window_gap) {+,-} 5 ))
+
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
@@ -147,11 +150,3 @@ XF86MonBrightnessUp
 # Lowers Brightness
 XF86MonBrightnessDown
 	light -U 5
-
-# Start Forge
-super + shift + f
-	/home/josh/forge.sh
-
-# Start Sling
-super + shift + s
-	cd /home/josh/sling-lin64; ./sling; cd 
