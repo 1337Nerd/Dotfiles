@@ -4,8 +4,8 @@ sxhkd &
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
-bspc config border_width         2
-bspc config window_gap          12
+bspc config border_width         0
+bspc config window_gap          37
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -13,17 +13,12 @@ bspc config gapless_monocle      true
 bspc config click_to_focus       true
 bspc config urgent_border_color "#72003e"
 
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
-bspc rule -a mousepad state=floating
-
-sxhkd &
 xsetroot -cursor_name left_ptr &
 compton --config ~/.config/compton.conf -b &
 redshift -l 39.866397:-83.074054 &
 wal -R
 polybar dracaether &
+compton --config ~/compton.conf -b
 
 source "$HOME/.cache/wal/colors.sh"
 bspc config normal_border_color "$color1"
