@@ -9,7 +9,8 @@
 
 
 [colors]
-background = ${xrdb:color0}
+background = #5a212726
+
 foreground = ${xrdb:color7}
 
 color1 = #76818E
@@ -34,7 +35,7 @@ font-1 = "fontawesome:pixelsize=9;2"
 fixed-center = true
 
 offset-x = 34
-offset-y = 12
+offset-y = 37
 module-background = ${colors.background}
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -128,6 +129,7 @@ type = internal/xwindow
 format-background = ${colors.background}
 format-foreground = ${colors.foreground}
 format-padding = 1
+label = %title%
 
 [module/dokuro]
 type = custom/text
